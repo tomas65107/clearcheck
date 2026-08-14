@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.tomas65107.clearcheck.mixins",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [],
+  "client": [
+    "ServerEntryMixin",
+    "MultiplayerScreenMixin",
+    "DisconnectedScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

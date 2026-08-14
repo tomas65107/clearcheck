@@ -1,0 +1,33 @@
+{
+  "clearcheck.configuration.title": "clearcheck Configs",
+  "clearcheck.configuration.section.clearcheck.common.toml": "clearcheck Configs",
+  "clearcheck.configuration.section.clearcheck.common.toml.title": "clearcheck Configs",
+  "clearcheck.configuration.items": "Item List",
+  "clearcheck.configuration.logDirtBlock": "Log Dirt Block",
+  "clearcheck.configuration.magicNumberIntroduction": "Magic Number Text",
+  "clearcheck.configuration.magicNumber": "Magic Number",
+
+  "gui.clearcheck.disconnected": "Clearcheck Disconnection",
+  "gui.clearcheck.open_website": "Open support website",
+
+
+  "clearcheck.incorrect_token.title": "You have sent an incorrect authentication token!",
+  "clearcheck.incorrect_token.message": "Looks like you have connected to this server before, but the token now does not match.",
+  "clearcheck.incorrect_token.explanation": "This can happen a few different ways:\n1. (if server is set to offline mode) Admin has reset tokens and someone else joined with the same name!\n2. Your tokens corrupted or got replaced with someone else's!\n3. Server has advanced protection measures turned on and cant regenerate token!",
+
+  "clearcheck.no_token.title": "You lack the authentication token for this server!",
+  "clearcheck.no_token.message": "This server has already seen a player with your name, but do not have token stored on your computer for this server.",
+  "clearcheck.no_token.explanation": "This can happen a few different ways:\n1. Have you changed computers? Old tokens may still be on a old computer.\n2. (if server is set to offline mode) Someone else was playing with the same name as you.",
+
+  "clearcheck.disallowed_assets.title": "Some assets you have installed are not allowed!",
+  "clearcheck.disallowed_assets.message": "Below is a list of all assets banned by admins. Resolve any conflicts and relog.\n This list has been logged. If you believe something is wrong, contact admins.",
+
+  "clearcheck.packets_not_sent.title": "Packets were not sent or sent too late to server!",
+  "clearcheck.packets_not_sent.message": "Packets are important for verification. You need to send correct Clearcheck packets before playing!",
+  "clearcheck.packets_not_sent.explanation": "Please make sure you have:\n1. tried reconnecting, sometimes that's all!\n2. original up-to-date version of Clearcheck mod\n3. a stable connection to the server and stable performance\n4. no other mod/program is interfering with your packets.",
+
+
+  "gui.clearcheck.token_saved": "Clearcheck token is saved for this server!",
+  "gui.clearcheck.no_tokens": "Currently, no tokens saved on this device!",
+  "gui.clearcheck.no_tokens_tip": "Do you own another device with the same Minecraft name and want to migrate tokens?"
+}
