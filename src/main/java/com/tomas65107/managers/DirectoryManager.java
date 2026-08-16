@@ -2,12 +2,11 @@ package com.tomas65107.managers;
 
 import net.neoforged.fml.loading.FMLEnvironment;
 
-import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class JsonManager {
+public class DirectoryManager {
     /// called at client init
     public static String prepareDirectory() {
         try {

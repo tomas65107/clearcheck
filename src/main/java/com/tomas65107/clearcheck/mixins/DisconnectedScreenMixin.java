@@ -2,11 +2,8 @@ package com.tomas65107.clearcheck.mixins;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
-import com.mojang.serialization.JsonOps;
 import com.tomas65107.clearcheck.ClearcheckDisconnections;
-import com.tomas65107.clearcheck.NotAllowedEntry;
+import com.tomas65107.clearcheck.ui.NotAllowedEntry;
 import com.tomas65107.clearcheck.TextCutter;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
@@ -20,7 +17,6 @@ import net.minecraft.client.gui.screens.DisconnectedScreen;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.DisconnectionDetails;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.ComponentSerialization;
 import net.minecraft.network.chat.MutableComponent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import org.spongepowered.asm.mixin.Final;
@@ -68,8 +64,9 @@ public abstract class DisconnectedScreenMixin extends Screen {
         layout.addChild(new StringWidget(Component.translatable("gui.clearcheck.disconnected"), this.font));
         layout.defaultCellSetting().alignHorizontallyCenter().padding(3);
         layout.addChild(new MultiLineTextWidget(Component.translatable("clearcheck."+disconnectType.id+".title").withStyle(ChatFormatting.RED, ChatFormatting.BOLD), this.font).setMaxWidth(this.width - 90).setCentered(true));
-        layout.addChild(new MultiLineTextWidget(Component.translatable("clearcheck."+disconnectType.id+".message", disconnectType.id), this.font).setMaxWidth(this.width - 90).setCentered(true));
-        if (!Component.translatable("clearcheck."+disconnectType.id+".explanation").getString().equals("clearcheck."+disconnectType.id+".explanation")) layout.addChild(new MultiLineTextWidget(Component.translatable("clearcheck."+disconnectType.id+".explanation").withStyle(ChatFormatting.GRAY), Minecraft.getInstance().font).setMaxWidth(this.width - 90).setCentered(false));
+        layout.addChild(new MultiLineTextWidget(Component.translatable("clearcheck."+disconnectType.id+".message"), this.font).setMaxWidth(this.width - 90).setCentered(true));
+        if (!Component.translatable("clearcheck."+disconnectType.id+".explanation").getString().equals("clearcheck."+disconnectType.id+".explanation"))
+            layout.addChild(new MultiLineTextWidget(Component.translatable("clearcheck."+disconnectType.id+".explanation").withStyle(ChatFormatting.GRAY), Minecraft.getInstance().font).setMaxWidth(this.width - 90).setCentered(false));
         layout.defaultCellSetting().alignHorizontallyCenter().padding(10);
         renderPayload(disconnectType, reason.getString());
 

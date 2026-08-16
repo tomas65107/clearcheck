@@ -26,6 +26,8 @@
   "clearcheck.packets_not_sent.message": "Packets are important for verification. You need to send correct Clearcheck packets before playing!",
   "clearcheck.packets_not_sent.explanation": "Please make sure you have:\n1. tried reconnecting, sometimes that's all!\n2. original up-to-date version of Clearcheck mod\n3. a stable connection to the server and stable performance\n4. no other mod/program is interfering with your packets.",
 
+  "gui.clearcheck.consent_screen.title": "Clearcheck transparency consent",
+  "gui.clearcheck.consent_screen.message": "Clearcheck sends information about your client to the server you are connecting to. This may include installed assets, and certain system information.\nYou can learn more by visiting the website. This screen won't be shown again.",
 
   "gui.clearcheck.token_saved": "Clearcheck token is saved for this server!",
   "gui.clearcheck.no_tokens": "Currently, no tokens saved on this device!",

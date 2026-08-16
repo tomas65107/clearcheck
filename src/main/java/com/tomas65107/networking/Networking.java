@@ -14,15 +14,15 @@ public class Networking {
         PayloadRegistrar registrar = event.registrar(clearcheck.MODID);
 
         registrar.playToServer(
-                ClearCheckHandshakeClient.TYPE,
-                ClearCheckHandshakeClient.STREAM_CODEC,
-                ClearCheckHandshakeServer::handle
+                JoinHandshake.TYPE,
+                JoinHandshake.STREAM_CODEC,
+                JoinHandshakeHandle::handle
         );
 
         registrar.playToClient(
-                TokenStaterServer.TYPE,
-                TokenStaterServer.STREAM_CODEC,
-                TokenStaterClient::handle
+                TokenStater.TYPE,
+                TokenStater.STREAM_CODEC,
+                TokenStaterHandle::handle
         );
     }
 }

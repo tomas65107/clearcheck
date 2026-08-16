@@ -1,16 +1,19 @@
 package com.tomas65107.clearcheck.mixins;
 
-import com.tomas65107.clearcheck.SavedTokensScreen;
-import net.minecraft.client.gui.GuiGraphics;
+import com.tomas65107.clearcheck.Configs;
+import com.tomas65107.clearcheck.ui.ClearCheckTransparencyScreen;
+import com.tomas65107.clearcheck.ui.SavedTokensScreen;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.components.*;
-import net.minecraft.client.gui.components.events.GuiEventListener;
-import net.minecraft.client.gui.narration.NarratableEntry;
+import net.minecraft.client.gui.layouts.LinearLayout;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
+import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -23,6 +26,13 @@ public abstract class MultiplayerScreenMixin extends Screen {
 
     protected MultiplayerScreenMixin(Component title) {
         super(title);
+    }
+
+    @Inject(method = "init", at = @At("TAIL"), cancellable = true)
+    private void transparencyAlert(CallbackInfo ci) {
+        if (Configs.HIDE_CONSENT_SCREEN.isFalse()) {
+            this.minecraft.setScreen(new ClearCheckTransparencyScreen(this));
+        }
     }
 
     @Inject(method = "init", at = @At("TAIL"))
@@ -53,5 +63,10 @@ public abstract class MultiplayerScreenMixin extends Screen {
         );
 
         spriteiconbutton.setPosition(x, y);
+    }
+
+    @Unique
+    private void clearCheck$addWidget(AbstractWidget widget) {
+        this.addRenderableWidget(widget);
     }
 }

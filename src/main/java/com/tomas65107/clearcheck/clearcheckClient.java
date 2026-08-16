@@ -1,10 +1,9 @@
 package com.tomas65107.clearcheck;
 
 import com.tomas65107.managers.TokenManager;
-import com.tomas65107.networking.ClearCheckHandshakeClient;
+import com.tomas65107.networking.JoinHandshake;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
-import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.resources.ResourceLocation;
@@ -19,7 +18,6 @@ import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
 
 import java.util.List;
-import java.util.Objects;
 
 import static net.neoforged.neoforge.network.PacketDistributor.sendToServer;
 
@@ -45,9 +43,9 @@ public class clearcheckClient {
 
         clearcheck.LOGGER.debug("Joined server: " + serverIp);
         if (TokenManager.retrieveForServer(serverIp) != null) {
-            sendToServer(new ClearCheckHandshakeClient(InfoCollector.getMods(), InfoCollector.getResourcePacks(), InfoCollector.getUserInfo(), TokenManager.retrieveForServer(serverIp)));
+            sendToServer(new JoinHandshake(InfoCollector.getMods(), InfoCollector.getResourcePacks(), InfoCollector.getUserInfo(), TokenManager.retrieveForServer(serverIp)));
         } else {
-            sendToServer(new ClearCheckHandshakeClient(InfoCollector.getMods(), InfoCollector.getResourcePacks(), InfoCollector.getUserInfo(), "not_stated"));
+            sendToServer(new JoinHandshake(InfoCollector.getMods(), InfoCollector.getResourcePacks(), InfoCollector.getUserInfo(), "not_stated"));
         }
 
     }

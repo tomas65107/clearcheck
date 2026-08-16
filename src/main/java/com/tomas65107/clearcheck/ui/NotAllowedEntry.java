@@ -1,9 +1,4 @@
-package com.tomas65107.clearcheck;
-
-import io.netty.buffer.ByteBuf;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.ByteBufCodecs;
-import net.minecraft.network.codec.StreamCodec;
+package com.tomas65107.clearcheck.ui;
 
 public class NotAllowedEntry {
 

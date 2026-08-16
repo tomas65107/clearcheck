@@ -1,7 +1,8 @@
 package com.tomas65107.clearcheck;
 
 import com.google.gson.Gson;
-import com.tomas65107.managers.PlayerDataManager;
+import com.tomas65107.clearcheck.ui.NotAllowedEntry;
+import com.tomas65107.managers.DataManager;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -25,7 +26,7 @@ public class PacketReinforcer {
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
         if (!FMLEnvironment.dist.isDedicatedServer()) return;
         if (!(event.getEntity() instanceof ServerPlayer player)) return;
-        PlayerDataManager.load();
+        DataManager.load();
 
         // Start handshake timer
         handshakeMap.put(player, 0);

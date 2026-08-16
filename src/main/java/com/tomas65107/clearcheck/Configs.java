@@ -25,5 +25,9 @@ public class Configs {
             comment("Manage, if you want to opt-out from sharing your set operating-system username with the server you're connecting to!")
             .define("share_username", true);
 
+    public static final ModConfigSpec.BooleanValue HIDE_CONSENT_SCREEN = CLIENT_BUILDER.
+            comment("Whether to show the consent screen again. This screen is normally shown only once after the first installation.")
+            .define("hide_consent_screen", false);
+
     static final ModConfigSpec CLEARCHECK_CONFIG_CLIENT = CLIENT_BUILDER.build();
 }

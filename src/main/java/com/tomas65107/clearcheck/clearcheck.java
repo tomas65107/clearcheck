@@ -1,6 +1,6 @@
 package com.tomas65107.clearcheck;
 
-import com.tomas65107.managers.PlayerDataManager;
+import com.tomas65107.managers.DataManager;
 import com.tomas65107.managers.ServerSecret;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
@@ -16,7 +16,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-import static com.tomas65107.managers.JsonManager.prepareDirectory;
+import static com.tomas65107.managers.DirectoryManager.prepareDirectory;
 import static com.tomas65107.managers.ServerSecret.SERVER_SECRET;
 
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
@@ -51,7 +51,7 @@ public class clearcheck {
         if (!FMLEnvironment.dist.isDedicatedServer()) return;
 
         if (!SERVER_SECRET.exists()) ServerSecret.generateNewDat();
-        PlayerDataManager.load();
+        DataManager.load();
 
         LOGGER.info("finished loading PlayerDataManager and server secret");
     }

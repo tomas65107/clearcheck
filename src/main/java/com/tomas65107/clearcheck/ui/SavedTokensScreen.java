@@ -1,6 +1,6 @@
-package com.tomas65107.clearcheck;
+package com.tomas65107.clearcheck.ui;
 
-import com.ibm.icu.message2.Mf2DataModel;
+import com.tomas65107.clearcheck.clearcheck;
 import com.tomas65107.managers.TokenManager;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
@@ -13,10 +13,8 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 
-import java.io.File;
 import java.nio.file.Path;
 import java.util.List;
-import java.util.jar.JarFile;
 
 import static com.tomas65107.clearcheck.TextCutter.cutTextComponent;
 
@@ -31,7 +29,6 @@ public class SavedTokensScreen extends Screen {
     }
 
     @Override
-
     protected void init() {
         this.scrolllist = new SavedServersTokens(this.width, this.height);
         this.addRenderableWidget(this.scrolllist);
