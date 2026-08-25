@@ -28,7 +28,7 @@ Clearcheck allows server administrators to monitor players' installed mods and p
 </p>
 
 > [!NOTE]
-> Mod on Modrinth may not be available as due the Modrinth content verification!
+> In the near future, i will be submitting this project to Modrinth. It may also take a while to get accepted.
 
 > [!IMPORTANT]
 > The mod is still in **alpha**. Expect bugs. If tokens or anything stops working, **do not hesitate** to report it! \
