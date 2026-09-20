@@ -28,7 +28,7 @@ Clearcheck allows server administrators to monitor players' installed mods and p
 </p>
 
 > [!NOTE]
-> In the near future, i will be submitting this project to Modrinth. It may also take a while to get accepted.
+> Mod is now live on Modrinth with curseforge in the near future!
 
 > [!IMPORTANT]
 > The mod is still in **alpha**. Expect bugs. If tokens or anything stops working, **do not hesitate** to report it! \
